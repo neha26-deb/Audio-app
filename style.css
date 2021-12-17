@@ -1,0 +1,115 @@
+/*removing all margins padding by setting it to zero*/
+/*here box-sizing is done to border-box*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*designing div class app */
+.app {
+  height: 100vh; /*it gives full screen just like an app*/
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+/*designing div class time-select and sound-picker together.
+This is done so by separating time-select and sound-picker with a comma*/
+.time-select,
+.sound-picker {
+  height: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+
+/*designing time-select and sound-picker buttons together.
+This is done so by separating time-select and sound-picker with a comma*/
+.time-select button,
+.sound-picker button {
+  color: white;
+  width: 30%;
+  height: 10%;
+  background: none;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid white;
+  transition: all 0.5s ease;
+}
+
+/*change button color of time-select buttons on hovering*/
+.time-select button:hover {
+  background: white;
+  color: black;
+}
+
+/*designing sound-picker button*/
+.sound-picker button {
+  border: none;
+  height: 120px;
+  width: 120px;
+  padding: 30px;
+  border-radius: 50%;
+}
+
+/*add background to sound-picker button*/
+.sound-picker button:nth-child(1) {
+  background: #4972a1;
+}
+.sound-picker button:nth-child(2) {
+  background: #a14f49;
+}
+
+/*adding height to sound-picker image*/
+.sound-picker button img {
+  height: 100%;
+}
+
+/*designing div class player-container*/
+.player-container {
+  position: relative;
+  height: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+/*designing div class player-container's svg */
+.player-container svg {
+  position: absolute;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  pointer-events: none; /*to use play butto as it is under the circle */
+}
+
+/*designing div class player-container's svg circle*/
+.player-container svg circle {
+  transition: all 0.2s ease-in-out;
+}
+
+/*designing time-display */
+.time-display {
+  color: white;
+  position: absolute;
+  font-size: 50px;
+  bottom: 10%;
+}
+
+/*designing video */
+video {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: -10; /*to put video behind */
+}

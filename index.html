@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    
+    <!--- link css file in head section--->
+    <link rel="stylesheet" href="./style.css" />
+
+    <!--- This gives us title of our app--->
+    <title>Audio App</title>
+
+  </head>
+  <body>
+    <!--- creating div with class = app --->
+    <div class="app">
+
+      <!--- creating div with class = vid-container to hold default video --->
+      <div class="vid-container">
+        <!--- video loop to run video endlessly--->
+        <video loop >
+
+          <!--- adding source with path to rain video and specifying type --->
+          <source src="./video/rain.mp4"  type="video/mp4">
+        </video>
+      </div>
+
+      <!--- This div section picks up time--->
+      <div class="time-select">
+
+        <!--- Adding buttons in div class time-select--->
+        <!--- 2 Minutes button having data attribute data-time = 120 sec to be used in javascript--->
+        <button data-time="120">2 Minutes</button>
+
+        <!--- 5 Minutes button having data attribute data-time = 300 sec to be used in javascript--->
+        <button data-time="300" class="medium-mins">5 Minutes</button>
+
+        <!--- 10 Minutes button having data attribute data-time = 600 sec to be used in javascript--->
+        <button data-time="600" class="long-mins">10 Minutes</button>
+      </div>
+
+
+      <!--- This div section contains play button in the timer--->
+      <div class="player-container">
+
+        <!--- add audio track via audio class--->
+        <audio class="song">
+
+          <!--- adding audio source--->
+          <source src="./sounds/rain.mp3" />
+        </audio>
+
+        <!--- adding image src with path to play image, with alt = play and class = play--->
+        <img src="./svg/play.svg" alt="play" class="play"></img>
+        
+         <!--- adding outline of audio track from track-outline.svg with class = track-outline--->
+        <svg class="track-outline" 
+          width="453" 
+          height="453" 
+          viewBox="0 0 453 453" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+        <circle 
+          cx="226.5" 
+          cy="226.5" 
+          r="216.5" 
+          stroke="white" 
+          stroke-width="20"
+        />
+        </svg>
+
+        <!--- adding moving-outline from moving-outline.svg with class = moving-outline--->
+        <svg class="moving-outline" 
+          width="453" 
+          height="453" 
+          viewBox="0 0 453 453" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+        >
+        <circle 
+          cx="226.5" 
+          cy="226.5" 
+          r="216.5" 
+          stroke="#018EBA" 
+          stroke-width="20"
+        />
+        </svg>
+
+        <!--- adding time-display, the count-down--->  
+        <h3 class="time-display">
+          0:00
+        </h3>      
+      </div>
+
+      <!--- This div section deals with picking sound--->
+      <div class="sound-picker">
+
+        <!--- Adding buttons in div class sound-picker--->
+        <!--- This button contains:
+          data-sound: with path to rain sound,
+          data-video: with path to rain video,
+          img src: with path to rain image and
+          an alt = rain
+        --->
+        <button data-sound="./sounds/rain.mp3" data-video="./video/rain.mp4" >
+          <img src="./svg/rain.svg" alt="rain">
+        </button>
+
+        <!--- This button contains:
+          data-sound: with path to beach sound,
+          data-video: with path to beach video,
+          img src: with path to beach image and
+          an alt = beach
+        --->
+        <button data-sound="./sounds/beach.mp3" data-video="./video/beach.mp4">
+          <img src="./svg/beach.svg" alt="beach">
+        </button>
+      </div>
+    </div>
+
+    <!--- link js file in the body section--->
+    <script src="app.js"></script>
+  </body>
+</html>
